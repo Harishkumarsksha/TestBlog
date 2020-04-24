@@ -1,0 +1,82 @@
+pytz:
+
+time zine definetion is required for python used by the SQLite to work with datetimes 
+pytz module provides the timezone definition.
+
+pip install pytz
+
+Note : django provides an inbuilt support for timezone 
+add in the settings.py 
+
+USE_TZ=True
+
+Customization of the admin interface:
+
+1.list_display
+2.list_filter
+3.search_fields
+4.prepopulated_fields
+5.raw_id_fields
+6.date_heirarchy
+6.ordering
+
+Django Pagination:
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+If more number of posts (records) are available then it is highly recommended to
+display all records across multiple pages, so that end user can feel more comfortable.
+This concept is called Pagination (ie. Display records across multiple pages is called
+pagination)
+Django can provide inbuilt support for Pagination.It contains paginator module and
+Paginator class.
+
+Mail sending functionally :
+--------------------------
+In the web application sending mail is very common requirement. Django provides in
+built support for mail sending functionality.
+Django provides mail module & send_mail() function.
+To send email compulsory SMTP Server must be required.
+SMTP  Simple Mail Transfer Protoco
+
+For gmail SMTP Server:
+EMAIL_HOST= 'smtp.gmail.com'
+EMAIL_PORT= 587
+EMAIL_HOST_USER= Username for SMTP Server
+EMAIL_HOST_PASSWORD=Password for SMTP Server
+EMAIL_USE_TLS= True
+
+from django.core.mail import send_mail
+2) send_mail('Hello','Very imp msg','python6656@gmail.com',[
+'xxx@gmail.com',yyy@gmail.com'])
+
+
+
+Adding the comment section to the blog :
+------------------------------------------
+1.We need to create a Model to save comments 
+2. we required to create the model based form to submit the form 
+3.we required to view function to process comments and save to the database 
+4. we have to edit eht post_details.html to display list of comments and add a form to submit comments 
+
+
+comments are always associted with the post so we have to create the comments class which is the child class of the post class 
+this can be done by the ForeignKey(Post,on_delete=models.SET_NULL,related_name='comments)
+
+
+Adding the Taggs functionality to the Application:
+-------------------------------------------------
+
+Advantages of the Tagging :
+
+1.For Search Engine Optimization:
+2.For Easy navigation to the end user 
+
+tagging application installation 
+
+pip install django-taggit
+
+
+
+custom taggs and findding the similar tags are pending ::::::::::::::::::
